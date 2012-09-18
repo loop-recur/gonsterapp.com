@@ -1,0 +1,43 @@
+@media only screen and (min-width: 768px) {
+  .monsters img {
+    width: 50%;
+    margin: 0 0 0 0;
+    float: none;
+  }
+  .iPhone {
+    float: right;
+    width: 55%;
+    margin: -260px -12% 0 0;
+  }
+  .shadow {
+    display: block;
+    position: absolute;
+    width: 80%;
+    margin: -300px 0;
+  }
+}
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+  .logo img {
+    margin: 40px 0 0 0;
+  }
+  .text {
+    width: 100%;
+  }
+  .copy {
+    font-size: 1em;
+    width: 50%;
+  }
+  .storetag {
+    text-align: center;
+  }
+  .appstore img {
+    width: 30%;
+    margin: 40px 35%;
+  }
+  #main-container {
+    min-height: 560px;
+  }
+  .iPhone {
+    margin: -650px -12% 0 0;
+  }
+}

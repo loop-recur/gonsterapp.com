@@ -1,0 +1,23 @@
+@media only screen and (min-width: 480px) {
+  .logo img {
+    width: 30%;
+    margin: 0 0 0 -2%;
+    float: left;
+  }
+  .monsters img {
+    width: 70%;
+    margin: 26px 0 0 0;
+    float: left;
+  }
+  .monsters:after {
+    content: "";
+    display: none;
+  }
+  p {
+    font-size: .8em;
+  }
+  .appstore img {
+    width: 40%;
+    margin: 15px 30%;
+  }
+}
