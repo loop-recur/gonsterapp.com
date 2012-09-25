@@ -119,10 +119,19 @@ p {
 	.text-shadow();
 }
 
+.storetag {
+	text-align: center;
+}
+
+.appstore {
+	width: 100%;
+	display: block;
+	z-index: 99;
+}
+
 .appstore img {
 	width: 60%;
-	margin: 0 20%;
-	max-width: 287px;
+	margin: 0 auto;
 }
 
 .iPhone {
@@ -146,6 +155,7 @@ background-image: -webkit-gradient( linear, left top, right bottom, color-stop(0
 .shadow {
 display: none;
 .transition;
+  pointer-events: none;
 }
 
 @media only screen and (max-device-width: 480px) {

@@ -252,13 +252,17 @@ td {
 /* !======GENERAL STYLES======= */
 body {
   font: 16px/26px 'Helvetica Neue', Arial, Helvetica, serif;
-  background: red;
+  background: url(../img/bg1.png) repeat;
   overflow-x: hidden;
   border-top: 1px solid #ffffff;
   -webkit-box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
   -o-box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0;
 }
 .test {
   background: black;
@@ -304,10 +308,17 @@ p {
   -o-text-shadow: 0 1px 1px #ffffff;
   text-shadow: 0 1px 1px #ffffff;
 }
+.storetag {
+  text-align: center;
+}
+.appstore {
+  width: 100%;
+  display: block;
+  z-index: 99;
+}
 .appstore img {
   width: 60%;
-  margin: 0 20%;
-  max-width: 287px;
+  margin: 0 auto;
 }
 .iPhone {
   width: 100%;
@@ -319,7 +330,7 @@ p {
   transition-duration: 0.35s;
 }
 #main-container {
-  height: 100%;
+  min-height: 500px;
   z-index: -1;
   background-image: linear-gradient(left top, rgba(114, 168, 70, 0) 32%, rgba(114, 168, 70, 0.8) 66%);
   background-image: -o-linear-gradient(left top, rgba(114, 168, 70, 0) 32%, rgba(114, 168, 70, 0.8) 66%);
@@ -334,8 +345,9 @@ p {
   -moz-transition-duration: 0.35s;
   -o-transtition-duration: 0.35s;
   transition-duration: 0.35s;
+  pointer-events: none;
 }
-@media only screen and (max-device-width: 480px), only screen and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (max-device-width: 480px) {
   .leds:before {
     content: "";
     background: url(../img/LED.gif) no-repeat;
@@ -343,6 +355,9 @@ p {
     position: fixed;
     width: 10px;
     height: 100%;
+    min-height: 640px;
+    left: 0px;
+    top: 0;
     -webkit-box-shadow: 4px 0 4px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 4px 0 4px rgba(0, 0, 0, 0.3);
     -o-box-shadow: 4px 0 4px rgba(0, 0, 0, 0.3);
@@ -356,7 +371,7 @@ p {
     right: 0px;
     top: 0;
     width: 10px;
-    height: 920px;
+    min-height: 640px;
     -webkit-box-shadow: -4px 0 4px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: -4px 0 4px rgba(0, 0, 0, 0.3);
     -o-box-shadow: -4px 0 4px rgba(0, 0, 0, 0.3);
@@ -404,12 +419,11 @@ p {
     float: none;
   }
   #main-container {
+    min-height: 550px;
     padding-top: 20px;
     border-top: 1px solid #E5E5E5;
-    -webkit-box-shadow: inset 0 1px 1px #ffffff;
-    -moz-box-shadow: inset 0 1px 1px #ffffff;
-    -o-box-shadow: inset 0 1px 1px #ffffff;
-    box-shadow: inset 0 1px 1px #ffffff;
+    /*.box-shadow(inset 0, 1px, 1px, #ffffff);*/
+  
     background-image: linear-gradient(left top, rgba(114, 168, 70, 0.1) 32%, rgba(114, 168, 70, 0.8) 66%);
     background-image: -o-linear-gradient(left top, rgba(114, 168, 70, 0.1) 32%, rgba(114, 168, 70, 0.8) 66%);
     background-image: -moz-linear-gradient(left top, rgba(114, 168, 70, 0.1) 32%, rgba(114, 168, 70, 0.8) 66%);
@@ -447,6 +461,15 @@ p {
   }
 }
 @media only screen and (min-width: 768px) {
+  /*
+  body:before {
+  	content: "768px";
+  	display: block;
+  	background: blue;
+  	position: absolute;
+  	width: 100px;
+  }
+  */
   .monsters img {
     width: 50%;
     margin: 0 0 0 0;
@@ -475,9 +498,6 @@ p {
     font-size: 1em;
     width: 50%;
   }
-  .storetag {
-    text-align: center;
-  }
   .appstore img {
     width: 30%;
     margin: 40px 35%;
@@ -493,13 +513,13 @@ p {
   .iPhone {
     margin: -420px -15% 0 0;
   }
-  .storetag {
-    width: 80%;
-    margin: 20px 10%;
-    text-align: center;
-  }
   .shadow {
     margin: -380px 0 0 0;
+  }
+}
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+  #main-container {
+    min-height: 350px;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -517,6 +537,9 @@ p {
     width: 60%;
     margin: -360px 0;
   }
+}
+@media only screen and (min-width: 1400px) {
+  
 }
 /* =============================================================================
    Non-Semantic Helper Classes
